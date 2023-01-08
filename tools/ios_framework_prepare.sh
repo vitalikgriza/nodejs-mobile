@@ -20,7 +20,7 @@ TARGET_LIBRARY_PATH='tools/ios-framework/bin/arm64'
 GYP_DEFINES="target_arch=arm64 host_os=mac target_os=ios"
 export GYP_DEFINES
 
-./configure --dest-os=ios --dest-cpu=arm64 --with-intl=none --cross-compiling --enable-static --openssl-no-asm --v8-options=--jitless --without-node-code-cache --without-node-snapshot
+./configure --dest-os=ios --dest-cpu=arm64 --cross-compiling --enable-static --openssl-no-asm --v8-options=--jitless --without-node-code-cache --without-node-snapshot --with-intl=full-icu --download=all --without-inspector
 make -j$(getconf _NPROCESSORS_ONLN)
 
 mkdir -p $TARGET_LIBRARY_PATH
@@ -51,7 +51,7 @@ TARGET_LIBRARY_PATH='tools/ios-framework/bin/x64'
 GYP_DEFINES="target_arch=x64 host_os=mac target_os=ios"
 export GYP_DEFINES
 
-./configure --dest-os=ios --dest-cpu=x64 --with-intl=none --cross-compiling --enable-static --openssl-no-asm --v8-options=--jitless --without-node-code-cache --without-node-snapshot
+./configure --dest-os=ios --dest-cpu=x64 --cross-compiling --enable-static --openssl-no-asm --v8-options=--jitless --without-node-code-cache --without-node-snapshot --with-intl=full-icu --download=all --without-inspector
 make -j$(getconf _NPROCESSORS_ONLN)
 
 mkdir -p $TARGET_LIBRARY_PATH
